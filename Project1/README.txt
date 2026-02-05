@@ -15,11 +15,10 @@ We have neither given nor received unauthorized assistance on this work.
                             VM Information
 ================================================================================
 
-VM Directory:       [YOUR_VM_DIRECTORY_NAME]
-Code Path in VM:    [PATH_TO_YOUR_CODE, e.g., /home/username/project1/]
-Account Password:   [YOUR_PASSWORD]
+VM Directory:       dhouchen/HouchensUbuntu
+Code Path in VM:    [/home/dhouchen/Operating-Systems/Project1]
+Account Password:   [BRONCOS]
 
-NOTE: Please fill in the above VM information before submission.
 
 ================================================================================
                           Build Instructions
@@ -50,6 +49,21 @@ Files Included:
 - list_test.c   : Comprehensive test file for the linked list implementation
 - Makefile      : Build automation with gcc and -Wall flag
 - README.txt    : This documentation file
+- vm_setup.sh   : Helper script for automated build and test on Ubuntu VM
+
+VM Setup Script (vm_setup.sh):
+------------------------------
+A convenience script is provided to automate the build and test process on the
+Ubuntu VM. To use it:
+
+   $ chmod +x vm_setup.sh
+   $ ./vm_setup.sh
+
+The script will:
+1. Install required tools (make, gcc, dos2unix) if not present
+2. Convert all source files to Unix line endings
+3. Build the project using make
+4. Run the test suite automatically
 
 Functions Implemented:
 ----------------------
@@ -108,6 +122,15 @@ The test file (list_test.c) includes:
 - Stanford CS Library (cslibrary.stanford.edu) - C programming reference
 - GNU Make Manual - Makefile syntax and best practices
 - man pages for malloc, free, strdup, strlen, strncpy
+
+================================================================================
+                        AI Assistance Statement
+================================================================================
+
+I received assistance from Claude Opus 4.5 (Anthropic) in building the test
+file (list_test.c) and documentation (README.txt). The core linked list
+implementation logic in list.c was developed with my own understanding of
+data structures and memory management in C.
 
 ================================================================================
                           Notes for Grading
