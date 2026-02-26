@@ -14,7 +14,6 @@
 #include <linux/kernel.h>
 #include <linux/sched.h>
 #include <linux/sched/signal.h>
-#include <linux/pid.h>
 #include <linux/moduleparam.h>
 
 static int pid = -1;
@@ -42,6 +41,7 @@ static const char *state_to_string(unsigned int state)
 static int __init print_other_init(void)
 {
 	struct task_struct *task;
+	struct task_struct *target = NULL;
 
 	printk(KERN_INFO "print_other: Module loaded with pid=%d\n", pid);
 
@@ -51,10 +51,14 @@ static int __init print_other_init(void)
 		return -EINVAL;
 	}
 
-	rcu_read_lock();
-	task = pid_task(find_vpid(pid), PIDTYPE_PID);
-	if (task == NULL) {
-		rcu_read_unlock();
+	for_each_process(task) {
+		if (task->pid == pid) {
+			target = task;
+			break;
+		}
+	}
+
+	if (target == NULL) {
 		printk(KERN_ERR "print_other: No process found with PID %d\n",
 		       pid);
 		return -ESRCH;
@@ -65,6 +69,7 @@ static int __init print_other_init(void)
 	printk(KERN_INFO "print_other: %-20s %-10s %s\n", "NAME", "PID", "STATE");
 	printk(KERN_INFO "print_other: %-20s %-10s %s\n", "----", "---", "-----");
 
+	task = target;
 	while (task->pid != 0) {
 		printk(KERN_INFO "print_other: %-20s %-10d %s (%u)\n",
 		       task->comm,
@@ -74,7 +79,6 @@ static int __init print_other_init(void)
 		task = task->parent;
 	}
 
-	rcu_read_unlock();
 	return 0;
 }
 
