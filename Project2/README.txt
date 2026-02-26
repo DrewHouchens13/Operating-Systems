@@ -15,8 +15,8 @@ We have neither given nor received unauthorized assistance on this work.
                             VM Information
 ================================================================================
 
-VM Directory:       [FILL IN - e.g., dhouchen/HouchensUbuntu]
-Code Path in VM:    [FILL IN - e.g., /home/dhouchen/Operating-Systems/Project2]
+VM Directory:       dhouchen/HouchensVM
+Code Path in VM:    /home/drew/Operating-Systems/Project2
 Account Password:   [FILL IN]
 Root Password:      [FILL IN]
 

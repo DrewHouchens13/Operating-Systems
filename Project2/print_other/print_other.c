@@ -37,7 +37,7 @@ static const char *state_to_string(unsigned int state)
 	}
 }
 
-int init_module(void)
+static int __init print_other_init(void)
 {
 	struct task_struct *task;
 
@@ -76,13 +76,13 @@ int init_module(void)
 	return 0;
 }
 
-void cleanup_module(void)
+static void __exit print_other_exit(void)
 {
 	printk(KERN_INFO "print_other: Module removed\n");
 }
 
-module_init(init_module);
-module_exit(cleanup_module);
+module_init(print_other_init);
+module_exit(print_other_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("Prints process info for a given PID and its parent chain");

@@ -30,7 +30,7 @@ static const char *state_to_string(unsigned int state)
 	}
 }
 
-int init_module(void)
+static int __init print_self_init(void)
 {
 	struct task_struct *task;
 
@@ -52,13 +52,13 @@ int init_module(void)
 	return 0;
 }
 
-void cleanup_module(void)
+static void __exit print_self_exit(void)
 {
 	printk(KERN_INFO "print_self: Module removed\n");
 }
 
-module_init(init_module);
-module_exit(cleanup_module);
+module_init(print_self_init);
+module_exit(print_self_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("Prints current process info and parent chain to init");
