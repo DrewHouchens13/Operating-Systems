@@ -127,8 +127,8 @@ The test file (list_test.c) includes:
                         AI Assistance Statement
 ================================================================================
 
-I received assistance from Claude Opus 4.5 (Anthropic) in building the test
-file (list_test.c) and documentation (README.txt). The core linked list
+I received guiding assistance from Claude Opus 4.5 (Anthropic) in building some C
+files and documentation (README.txt). The core linked list
 implementation logic in list.c was developed with my own understanding of
 data structures and memory management in C.
 
