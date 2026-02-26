@@ -13,6 +13,8 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/sched.h>
+#include <linux/sched/signal.h>
+#include <linux/pid.h>
 #include <linux/moduleparam.h>
 
 static int pid = -1;
