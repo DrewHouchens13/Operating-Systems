@@ -1,0 +1,2 @@
+Hello! This is a test message for the producer-consumer program.
+It reads characters one at a time and prints them back using a circular buffer.
