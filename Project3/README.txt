@@ -19,7 +19,7 @@ NAME OF VIRTUAL MACHINE (VM): HouchensVM
 USERNAME: drew
 PASSWORD: Broncos4me05-
 
-Files are located at ~/Project3/ on the VM.
+Files are located at ~/Operating-Systems/Project3/ on the VM.
 
 Directory layout:
 
