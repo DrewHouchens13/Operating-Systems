@@ -9,20 +9,18 @@ Drew Houchens
 
 Honor Statement:
 ----------------
-We have neither given nor received unauthorized assistance on this work.
+I have neither given nor received unauthorized assistance on this work.
 
 ================================================================================
                             VM Information
 ================================================================================
 
-NAME OF VIRTUAL MACHINE (VM):     (fill in for submission)
-USERNAME:                          (fill in for submission)
-PASSWORD:                          (fill in for submission)
+NAME OF VIRTUAL MACHINE (VM):     HouchensVM
+USERNAME:                         Drew
+PASSWORD:                         Broncos4me05-
 
-Code path on VM:                   /home/<user>/Operating-Systems/Project4
-                                   (adjust to match your layout)
-
-Root password (if required):       (fill in for submission)
+Code path on VM:                   /home/drew/Operating-Systems/Project4
+                                  
 
 Files are located under Project4/ with two subdirectories, one per kernel
 module. Build each module in its own folder on the Ubuntu VM (kernel headers
@@ -48,9 +46,6 @@ Build va_status:
 Clean (optional):
   $ make clean
 
-Note: Source is edited on Windows; if the VM reports bad interpreters or
-strange errors, convert line endings to Unix (LF), e.g.:
-  $ dos2unix va_space/va_space.c va_status/va_status.c
 
 ================================================================================
                           Project Description
@@ -143,7 +138,7 @@ va_status:
                         AI Assistance Statement
 ================================================================================
 
-(Optional — fill in per course policy)
+I used Anthropic's Sonnet 4.6 model for assistance building my approach to this project. 
 
 ================================================================================
                           Notes for Grading
