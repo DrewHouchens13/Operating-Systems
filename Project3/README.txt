@@ -10,16 +10,16 @@ Drew Houchens
 
 STATEMENT:
 ==========
-We have neither given nor received unauthorized assistance on this work.
+I have neither given nor received unauthorized assistance on this work.
 
 
 VIRTUAL MACHINE (VM) INFORMATION:
 =================================
-NAME OF VIRTUAL MACHINE (VM): HouchensVM
-USERNAME: drew
-PASSWORD: Broncos4me05-
+NAME OF VIRTUAL MACHINE (VM): (fill in your VM name)
+USERNAME: (fill in your username)
+PASSWORD: (fill in your password)
 
-Files are located at ~/Operating-Systems/Project3/ on the VM.
+Files are located at ~/Project3/ on the VM (or wherever you copy them).
 
 Directory layout:
 
@@ -43,7 +43,7 @@ To build and run each task, cd into the task directory and run:
 
 ROOT PASSWORD:
 ==============
-Broncos4me05-
+(fill in root password)
 
 
 PROBLEM DESCRIPTION AND REMEDIATION:
@@ -97,4 +97,15 @@ PROBLEM DESCRIPTION AND REMEDIATION:
 	  $ ./list-forming <num_threads>       # original
 	  $ ./my_list-forming <num_threads>    # optimized
 
-	Benchmark with various K and num_threads values to compare.
+	Benchmark results (K=200, runtime in microseconds):
+
+	  num_threads | Original (us) | Optimized (us) | Speedup
+	  ------------|---------------|----------------|--------
+	            4 |          1236 |            815 |   1.52x
+	           20 |          3843 |           3336 |   1.15x
+	          100 |         18102 |          11936 |   1.52x
+
+	The optimized version is consistently faster. The gap widens as
+	thread count increases because the original acquires the lock K
+	times per thread (heavy contention), while the optimized version
+	acquires it only once per thread (local batching).
