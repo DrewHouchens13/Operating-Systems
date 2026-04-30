@@ -26,7 +26,6 @@ static int __init va_space_init(void)
 {
 	struct task_struct *task;
 	struct mm_struct *mm;
-	struct vma_iterator iter;
 	struct vm_area_struct *vma;
 	unsigned long total_bytes = 0;
 	unsigned long kb;
